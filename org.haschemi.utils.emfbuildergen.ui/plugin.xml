@@ -6,11 +6,11 @@
       id="org.haschemi.utils.emfbuildergen.ui.GenerateEMFBuilders"
       objectClass="org.eclipse.emf.ecore.EObject">
       <action
-        id="org.haschemi.utils.emfbuildergen.ui.GenerateEMFBuildersAction"
-        label="Generate Builder Code"
-        menubarPath="generate-actions"
-        class="org.haschemi.utils.emfbuildergen.ui.GenerateEMFBuildersAction"
-        enablesFor="1">
+            class="org.haschemi.utils.emfbuildergen.ui.GenerateEMFBuildersAction"
+            enablesFor="1"
+            id="org.haschemi.utils.emfbuildergen.ui.GenerateEMFBuildersAction"
+            label="Generate Builder Code"
+            menubarPath="open-actions">
       </action>
     </objectContribution>
   </extension>
