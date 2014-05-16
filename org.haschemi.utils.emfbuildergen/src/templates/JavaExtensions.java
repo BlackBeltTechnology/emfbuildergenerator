@@ -18,6 +18,7 @@ import org.eclipse.emf.codegen.ecore.genmodel.GenPackage;
 import org.eclipse.emf.codegen.util.CodeGenUtil;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -28,6 +29,15 @@ public class JavaExtensions {
 
   public static String fqGenJavaPackage(final EClassifier p_eClassifier) {
     final GenPackage genPackage = findGenPackageFor(p_eClassifier);
+    return fqGenJavaPackage(genPackage);
+  }
+
+  public static String fqGenJavaPackage(final EPackage p_package) {
+    final GenPackage genPackage = findGenPackageFor(p_package);
+    return fqGenJavaPackage(genPackage);
+  }
+
+  private static String fqGenJavaPackage(final GenPackage genPackage) {
     final StringBuilder sb = new StringBuilder();
     if (genPackage.getBasePackage() != null && genPackage.getBasePackage().trim().length() > 0) {
       sb.append(genPackage.getBasePackage());
@@ -74,28 +84,35 @@ public class JavaExtensions {
     return Generator.pluralize(name);
   }
 
+  private static final GenPackage findGenPackageFor(final EPackage p_package) {
+    return findGenPackageFor(p_package, p_package);
+  }
+  
   private static final GenPackage findGenPackageFor(final EClassifier p_classifier) {
+    return findGenPackageFor(p_classifier, p_classifier.getEPackage());
+  }
+  
+  private static final GenPackage findGenPackageFor(final EObject p_element, final EPackage p_package) {
     final StringBuilder sb = new StringBuilder();
     for (final GenModel genModel : s_genModels) {
 
       List<GenPackage> listGenPkgs = getPackagesRecursively(genModel.getGenPackages());
       for (final GenPackage genPackage : listGenPkgs) {
         sb.append(genPackage.getNSURI()).append(",");
-
-        if (p_classifier.eIsProxy()) {
-          EcoreUtil.resolveAll(p_classifier);
-          if (p_classifier.eIsProxy()) {
-            throw new RuntimeException("Could not resolve proxy object " + p_classifier);
+        if (p_element.eIsProxy()) {
+          EcoreUtil.resolveAll(p_element);
+          if (p_element.eIsProxy()) {
+            throw new RuntimeException("Could not resolve proxy object " + p_element);
           }
         }
-
-        if (ePackageEquals(p_classifier.getEPackage(), genPackage.getEcorePackage())) {
+        if (ePackageEquals(p_package, genPackage.getEcorePackage())) {
           return genPackage;
         }
       }
     }
-    throw new RuntimeException("Did not find genpackage for '" + p_classifier + " using genmodels " + sb.toString() + ".");
+    throw new RuntimeException("Did not find genpackage for '" + p_element + " using genmodels " + sb.toString() + ".");
   }
+  
 
   private static final List<GenPackage> getPackagesRecursively(List<GenPackage> list) {
     List<GenPackage> resultList = new BasicEList<GenPackage>();

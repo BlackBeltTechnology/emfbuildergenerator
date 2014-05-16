@@ -28,23 +28,25 @@ cached isBuilderType(EClass p_ec) : p_ec.instanceClassName == null;
 cached String fqBuilderFile(EClassifier p_ec)       : p_ec.fqBuilderJava().replaceAll("\\.", "/") + ".java";
 cached String fqBuilderJava(EClassifier p_ec)       : p_ec.fqBuilderJavaPackage() + "." + p_ec.builderName();
 cached String fqBuilderJavaPackage(EClassifier p_ec): p_ec.fqGenJavaPackage() + ".util.builder";
+cached String fqBuilderJavaPackage(EPackage p_ep)	: p_ep.fqGenJavaPackage() + ".util.builder";
 cached String builderName(EClassifier p_ec)         : p_ec.name + "Builder";
 
 // extensions for the generated builder facade java classes of an Ecore metamodel
 cached String fqFacadeFile(EPackage p_ep)       : p_ep.fqFacadeJava().replaceAll("\\.", "/") + ".java";
 cached String fqFacadeJava(EPackage p_ep)       : p_ep.fqFacadeJavaPackage() + "." + p_ep.facadeName();
-cached String fqFacadeJavaPackage(EPackage p_ep): p_ep.eClassifiers.first().fqBuilderJavaPackage();
+cached String fqFacadeJavaPackage(EPackage p_ep): p_ep.fqBuilderJavaPackage();
 cached String facadeName(EPackage p_ep)         : p_ep.name.toFirstUpper() + "Builders";
 
 // extensions for the generated builder interface java class of an Ecore metamodel
 cached String fqInterfaceFile(EPackage p_ep)       : p_ep.fqInterfaceJava().replaceAll("\\.", "/") + ".java";
 cached String fqInterfaceJava(EPackage p_ep)       : p_ep.fqInterfaceJavaPackage() + "." + p_ep.interfaceName();
-cached String fqInterfaceJavaPackage(EPackage p_ep): p_ep.eClassifiers.first().fqBuilderJavaPackage();
+cached String fqInterfaceJavaPackage(EPackage p_ep): p_ep.fqBuilderJavaPackage();
 cached String interfaceName(EPackage p_ep)         : "I" + p_ep.name.toFirstUpper() + "Builder";
 
 // extensions for the already generated java classes of an Ecore metamodel
 cached String fqGenJava(EClassifier p_ec)        : p_ec.fqGenJavaPackage() + "." + p_ec.name.toJavaRef();
 cached String fqGenJavaPackage(EClassifier p_ec) : JAVA templates.JavaExtensions.fqGenJavaPackage(org.eclipse.emf.ecore.EClassifier);
+cached String fqGenJavaPackage(EPackage p_ep) : JAVA templates.JavaExtensions.fqGenJavaPackage(org.eclipse.emf.ecore.EPackage);
 cached String factoryInstance(EClassifier p_ec)  : JAVA templates.JavaExtensions.factoryInstance(org.eclipse.emf.ecore.EClassifier);
 
 // an extension to filter the structural features of a EClass by derived or not changeable ones
