@@ -13,7 +13,7 @@
   </prerequisites>
 
   <properties>
-    <tycho-version>0.14.1</tycho-version>
+    <tycho-version>0.18.1</tycho-version>
     <build.qualifier>'v'yyyyMMddHHmm</build.qualifier>
     <maven.compiler.target>1.6</maven.compiler.target>
     <maven.compiler.source>1.6</maven.compiler.source>
