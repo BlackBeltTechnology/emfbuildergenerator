@@ -119,7 +119,7 @@ public class JavaExtensions {
     resultList.addAll(list);
 
     for (final GenPackage genPackage : list) {
-      resultList.addAll(getPackagesRecursively(genPackage.getSubGenPackages()));
+      resultList.addAll(getPackagesRecursively(genPackage.getNestedGenPackages()));
     }
     return resultList;
   }
