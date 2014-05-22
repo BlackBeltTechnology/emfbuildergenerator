@@ -68,7 +68,7 @@
 «DEFINE builderAccessMethod FOR EClass»
   «IF isNonAbstractBuilderType()»
     public static final «builderName()» new«builderName()»() {
-      return «builderName()».new«builderName()»();
+      return «builderName()».create();
     }
   «ENDIF»
 «ENDDEFINE»
@@ -108,7 +108,7 @@
          * This method creates a new instance of the «builderName()».
          * @return new instance of the «builderName()»
          */
-        public static «builderName()» new«builderName()»() {
+        public static «builderName()» create() {
           return new «builderName()»();
         }
         
@@ -117,7 +117,7 @@
          */
         public «builderName()» but() {
           «LET "_builder" AS var»
-            «builderName()» «var» = new«builderName()»();        
+            «builderName()» «var» = create();        
             «EXPAND assignBuilderFeatures(var) FOREACH structuralFeatures()»           
             return «var»;
           «ENDLET»            
