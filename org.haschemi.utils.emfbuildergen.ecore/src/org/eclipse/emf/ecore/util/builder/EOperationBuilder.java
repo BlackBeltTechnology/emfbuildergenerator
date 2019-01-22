@@ -53,7 +53,7 @@ public class EOperationBuilder implements org.eclipse.emf.ecore.util.builder.IEc
    * This method creates a new instance of the EOperationBuilder.
    * @return new instance of the EOperationBuilder
    */
-  public static EOperationBuilder newEOperationBuilder() {
+  public static EOperationBuilder create() {
     return new EOperationBuilder();
   }
 
@@ -61,7 +61,7 @@ public class EOperationBuilder implements org.eclipse.emf.ecore.util.builder.IEc
    * This method can be used to override attributes of the builder. It constructs a new builder and copies the current values to it.
    */
   public EOperationBuilder but() {
-    EOperationBuilder _builder = newEOperationBuilder();
+    EOperationBuilder _builder = create();
     _builder.m_featureEAnnotationsSet = m_featureEAnnotationsSet;
     _builder.m_eAnnotations = m_eAnnotations;
     _builder.m_featureEAnnotationsBuilder = m_featureEAnnotationsBuilder;

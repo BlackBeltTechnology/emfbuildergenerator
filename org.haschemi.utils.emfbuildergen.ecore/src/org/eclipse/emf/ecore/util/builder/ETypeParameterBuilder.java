@@ -30,7 +30,7 @@ public class ETypeParameterBuilder implements org.eclipse.emf.ecore.util.builder
    * This method creates a new instance of the ETypeParameterBuilder.
    * @return new instance of the ETypeParameterBuilder
    */
-  public static ETypeParameterBuilder newETypeParameterBuilder() {
+  public static ETypeParameterBuilder create() {
     return new ETypeParameterBuilder();
   }
 
@@ -38,7 +38,7 @@ public class ETypeParameterBuilder implements org.eclipse.emf.ecore.util.builder
    * This method can be used to override attributes of the builder. It constructs a new builder and copies the current values to it.
    */
   public ETypeParameterBuilder but() {
-    ETypeParameterBuilder _builder = newETypeParameterBuilder();
+    ETypeParameterBuilder _builder = create();
     _builder.m_featureEAnnotationsSet = m_featureEAnnotationsSet;
     _builder.m_eAnnotations = m_eAnnotations;
     _builder.m_featureEAnnotationsBuilder = m_featureEAnnotationsBuilder;

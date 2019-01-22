@@ -40,7 +40,7 @@ public class EPackageBuilder implements org.eclipse.emf.ecore.util.builder.IEcor
    * This method creates a new instance of the EPackageBuilder.
    * @return new instance of the EPackageBuilder
    */
-  public static EPackageBuilder newEPackageBuilder() {
+  public static EPackageBuilder create() {
     return new EPackageBuilder();
   }
 
@@ -48,7 +48,7 @@ public class EPackageBuilder implements org.eclipse.emf.ecore.util.builder.IEcor
    * This method can be used to override attributes of the builder. It constructs a new builder and copies the current values to it.
    */
   public EPackageBuilder but() {
-    EPackageBuilder _builder = newEPackageBuilder();
+    EPackageBuilder _builder = create();
     _builder.m_featureEAnnotationsSet = m_featureEAnnotationsSet;
     _builder.m_eAnnotations = m_eAnnotations;
     _builder.m_featureEAnnotationsBuilder = m_featureEAnnotationsBuilder;

@@ -24,7 +24,7 @@ public class EmployeeBuilder implements org.haschemi.utils.emfbuildergen.company
    * This method creates a new instance of the EmployeeBuilder.
    * @return new instance of the EmployeeBuilder
    */
-  public static EmployeeBuilder newEmployeeBuilder() {
+  public static EmployeeBuilder create() {
     return new EmployeeBuilder();
   }
 
@@ -32,7 +32,7 @@ public class EmployeeBuilder implements org.haschemi.utils.emfbuildergen.company
    * This method can be used to override attributes of the builder. It constructs a new builder and copies the current values to it.
    */
   public EmployeeBuilder but() {
-    EmployeeBuilder _builder = newEmployeeBuilder();
+    EmployeeBuilder _builder = create();
     _builder.m_featureNameSet = m_featureNameSet;
     _builder.m_name = m_name;
     return _builder;

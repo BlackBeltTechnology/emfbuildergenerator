@@ -50,7 +50,7 @@ public class EClassBuilder implements org.eclipse.emf.ecore.util.builder.IEcoreB
    * This method creates a new instance of the EClassBuilder.
    * @return new instance of the EClassBuilder
    */
-  public static EClassBuilder newEClassBuilder() {
+  public static EClassBuilder create() {
     return new EClassBuilder();
   }
 
@@ -58,7 +58,7 @@ public class EClassBuilder implements org.eclipse.emf.ecore.util.builder.IEcoreB
    * This method can be used to override attributes of the builder. It constructs a new builder and copies the current values to it.
    */
   public EClassBuilder but() {
-    EClassBuilder _builder = newEClassBuilder();
+    EClassBuilder _builder = create();
     _builder.m_featureAbstract_Set = m_featureAbstract_Set;
     _builder.m_abstract_ = m_abstract_;
     _builder.m_featureEAnnotationsSet = m_featureEAnnotationsSet;

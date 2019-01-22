@@ -36,7 +36,7 @@ public class EDataTypeBuilder implements org.eclipse.emf.ecore.util.builder.IEco
    * This method creates a new instance of the EDataTypeBuilder.
    * @return new instance of the EDataTypeBuilder
    */
-  public static EDataTypeBuilder newEDataTypeBuilder() {
+  public static EDataTypeBuilder create() {
     return new EDataTypeBuilder();
   }
 
@@ -44,7 +44,7 @@ public class EDataTypeBuilder implements org.eclipse.emf.ecore.util.builder.IEco
    * This method can be used to override attributes of the builder. It constructs a new builder and copies the current values to it.
    */
   public EDataTypeBuilder but() {
-    EDataTypeBuilder _builder = newEDataTypeBuilder();
+    EDataTypeBuilder _builder = create();
     _builder.m_featureEAnnotationsSet = m_featureEAnnotationsSet;
     _builder.m_eAnnotations = m_eAnnotations;
     _builder.m_featureEAnnotationsBuilder = m_featureEAnnotationsBuilder;

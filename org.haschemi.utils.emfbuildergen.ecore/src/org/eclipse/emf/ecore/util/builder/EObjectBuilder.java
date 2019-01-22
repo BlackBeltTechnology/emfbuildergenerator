@@ -21,7 +21,7 @@ public class EObjectBuilder implements org.eclipse.emf.ecore.util.builder.IEcore
    * This method creates a new instance of the EObjectBuilder.
    * @return new instance of the EObjectBuilder
    */
-  public static EObjectBuilder newEObjectBuilder() {
+  public static EObjectBuilder create() {
     return new EObjectBuilder();
   }
 
@@ -29,7 +29,7 @@ public class EObjectBuilder implements org.eclipse.emf.ecore.util.builder.IEcore
    * This method can be used to override attributes of the builder. It constructs a new builder and copies the current values to it.
    */
   public EObjectBuilder but() {
-    EObjectBuilder _builder = newEObjectBuilder();
+    EObjectBuilder _builder = create();
     return _builder;
   }
 

@@ -104,13 +104,44 @@ public class EMFBuilderGenerator extends WorkflowComponentWithModelSlot {
     for (final GenModel genModel : genModels) {
       for (final GenPackage genPackage : genModel.getGenPackages()) {
         final EPackage p = genPackage.getEcorePackage();
+        p_ctx.set(getModelSlot(), p);
+        reader = new Reader();
+        reader.setUri(m_ecoreURI);
+        reader.setModelSlot(getModelSlot());
+
+        generator = new Generator();
         generator.addMetaModel(new EmfMetaModel(p));
+        /*
         if (p.getName().equals(ePackage.getName()) && p.getNsURI().equals(ePackage.getNsURI()) && p.getNsPrefix().equals(ePackage.getNsPrefix())) {
           targetGenModel = genModel;
         }
+        */
+        generator.addMetaModel(new EmfRegistryMetaModel());
+        generator.setFileEncoding(m_fileEncoding);
+        reader.checkConfiguration(p_issues);
+
+        reader.invoke(p_ctx, p_monitor, p_issues);
+        p_ctx.set(getModelSlot(), p);
+        generator.setExpand("templates::Main::main FOR " + getModelSlot());
+        final Outlet outlet = new Outlet();
+        final JavaBeautifier javaBeautifier = new JavaBeautifier();
+        javaBeautifier.setConfigFile(m_formatterConfigFile);
+        outlet.addPostprocessor(javaBeautifier);
+        outlet.setPath(m_platformUri + genModel.getModelDirectory());
+        generator.addOutlet(outlet);
+
+        GlobalVarDef optionFeatureAccesMethodPrefix = new GlobalVarDef();
+        optionFeatureAccesMethodPrefix.setName("featureModifierMethodPrefix");
+        optionFeatureAccesMethodPrefix.setValue("'" + m_featureModifierMethodPrefix + "'");
+        generator.addGlobalVarDef(optionFeatureAccesMethodPrefix);
+
+        JavaExtensions.setGenmodels(genModels);
+        generator.checkConfiguration(p_issues);
+        generator.invoke(p_ctx, p_monitor, p_issues);
       }
     }
 
+    /*
     generator.setExpand("templates::Main::main FOR " + getModelSlot());
     final Outlet outlet = new Outlet();
     final JavaBeautifier javaBeautifier = new JavaBeautifier();
@@ -127,6 +158,7 @@ public class EMFBuilderGenerator extends WorkflowComponentWithModelSlot {
     JavaExtensions.setGenmodels(genModels);
     generator.checkConfiguration(p_issues);
     generator.invoke(p_ctx, p_monitor, p_issues);
+    */
   }
 
   public void setEcoreURI(final String p_ecoreURI) {

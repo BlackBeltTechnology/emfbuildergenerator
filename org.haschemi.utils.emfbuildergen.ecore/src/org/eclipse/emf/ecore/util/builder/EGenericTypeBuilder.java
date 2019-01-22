@@ -37,7 +37,7 @@ public class EGenericTypeBuilder implements org.eclipse.emf.ecore.util.builder.I
    * This method creates a new instance of the EGenericTypeBuilder.
    * @return new instance of the EGenericTypeBuilder
    */
-  public static EGenericTypeBuilder newEGenericTypeBuilder() {
+  public static EGenericTypeBuilder create() {
     return new EGenericTypeBuilder();
   }
 
@@ -45,7 +45,7 @@ public class EGenericTypeBuilder implements org.eclipse.emf.ecore.util.builder.I
    * This method can be used to override attributes of the builder. It constructs a new builder and copies the current values to it.
    */
   public EGenericTypeBuilder but() {
-    EGenericTypeBuilder _builder = newEGenericTypeBuilder();
+    EGenericTypeBuilder _builder = create();
     _builder.m_featureEClassifierSet = m_featureEClassifierSet;
     _builder.m_eClassifier = m_eClassifier;
     _builder.m_featureEClassifierBuilder = m_featureEClassifierBuilder;

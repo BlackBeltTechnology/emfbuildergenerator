@@ -1,9 +1,9 @@
 package org.haschemi.utils.emfbuildergen.company;
 
 import static junit.framework.Assert.fail;
-import static org.haschemi.utils.emfbuildergen.company.util.builder.CompanyBuilder.newCompanyBuilder;
-import static org.haschemi.utils.emfbuildergen.company.util.builder.DepartmentBuilder.newDepartmentBuilder;
-import static org.haschemi.utils.emfbuildergen.company.util.builder.EmployeeBuilder.newEmployeeBuilder;
+import static org.haschemi.utils.emfbuildergen.company.util.builder.CompanyBuilders.newCompanyBuilder;
+import static org.haschemi.utils.emfbuildergen.company.util.builder.CompanyBuilders.newDepartmentBuilder;
+import static org.haschemi.utils.emfbuildergen.company.util.builder.CompanyBuilders.newEmployeeBuilder;
 
 import java.io.File;
 import java.io.IOException;

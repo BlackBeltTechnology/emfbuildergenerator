@@ -38,7 +38,7 @@ public class EAnnotationBuilder implements org.eclipse.emf.ecore.util.builder.IE
    * This method creates a new instance of the EAnnotationBuilder.
    * @return new instance of the EAnnotationBuilder
    */
-  public static EAnnotationBuilder newEAnnotationBuilder() {
+  public static EAnnotationBuilder create() {
     return new EAnnotationBuilder();
   }
 
@@ -46,7 +46,7 @@ public class EAnnotationBuilder implements org.eclipse.emf.ecore.util.builder.IE
    * This method can be used to override attributes of the builder. It constructs a new builder and copies the current values to it.
    */
   public EAnnotationBuilder but() {
-    EAnnotationBuilder _builder = newEAnnotationBuilder();
+    EAnnotationBuilder _builder = create();
     _builder.m_featureContentsSet = m_featureContentsSet;
     _builder.m_contents = m_contents;
     _builder.m_featureContentsBuilder = m_featureContentsBuilder;

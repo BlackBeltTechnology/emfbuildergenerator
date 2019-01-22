@@ -28,7 +28,7 @@ public class EFactoryBuilder implements org.eclipse.emf.ecore.util.builder.IEcor
    * This method creates a new instance of the EFactoryBuilder.
    * @return new instance of the EFactoryBuilder
    */
-  public static EFactoryBuilder newEFactoryBuilder() {
+  public static EFactoryBuilder create() {
     return new EFactoryBuilder();
   }
 
@@ -36,7 +36,7 @@ public class EFactoryBuilder implements org.eclipse.emf.ecore.util.builder.IEcor
    * This method can be used to override attributes of the builder. It constructs a new builder and copies the current values to it.
    */
   public EFactoryBuilder but() {
-    EFactoryBuilder _builder = newEFactoryBuilder();
+    EFactoryBuilder _builder = create();
     _builder.m_featureEAnnotationsSet = m_featureEAnnotationsSet;
     _builder.m_eAnnotations = m_eAnnotations;
     _builder.m_featureEAnnotationsBuilder = m_featureEAnnotationsBuilder;

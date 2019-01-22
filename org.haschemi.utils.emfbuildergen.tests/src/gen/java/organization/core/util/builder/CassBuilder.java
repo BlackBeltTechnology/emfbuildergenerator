@@ -21,7 +21,7 @@ public class CassBuilder implements organization.core.util.builder.ICoreBuilder<
    * This method creates a new instance of the CassBuilder.
    * @return new instance of the CassBuilder
    */
-  public static CassBuilder newCassBuilder() {
+  public static CassBuilder create() {
     return new CassBuilder();
   }
 
@@ -29,7 +29,7 @@ public class CassBuilder implements organization.core.util.builder.ICoreBuilder<
    * This method can be used to override attributes of the builder. It constructs a new builder and copies the current values to it.
    */
   public CassBuilder but() {
-    CassBuilder _builder = newCassBuilder();
+    CassBuilder _builder = create();
     return _builder;
   }
 

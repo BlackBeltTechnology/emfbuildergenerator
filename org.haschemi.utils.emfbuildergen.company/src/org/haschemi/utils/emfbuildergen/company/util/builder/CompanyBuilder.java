@@ -27,7 +27,7 @@ public class CompanyBuilder implements org.haschemi.utils.emfbuildergen.company.
    * This method creates a new instance of the CompanyBuilder.
    * @return new instance of the CompanyBuilder
    */
-  public static CompanyBuilder newCompanyBuilder() {
+  public static CompanyBuilder create() {
     return new CompanyBuilder();
   }
 
@@ -35,7 +35,7 @@ public class CompanyBuilder implements org.haschemi.utils.emfbuildergen.company.
    * This method can be used to override attributes of the builder. It constructs a new builder and copies the current values to it.
    */
   public CompanyBuilder but() {
-    CompanyBuilder _builder = newCompanyBuilder();
+    CompanyBuilder _builder = create();
     _builder.m_featureDepartmentSet = m_featureDepartmentSet;
     _builder.m_department = m_department;
     _builder.m_featureDepartmentBuilder = m_featureDepartmentBuilder;

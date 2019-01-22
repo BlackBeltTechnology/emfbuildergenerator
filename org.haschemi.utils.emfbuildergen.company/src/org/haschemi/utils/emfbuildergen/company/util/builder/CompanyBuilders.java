@@ -9,14 +9,14 @@ package org.haschemi.utils.emfbuildergen.company.util.builder;
  */
 public class CompanyBuilders {
   public static final EmployeeBuilder newEmployeeBuilder() {
-    return EmployeeBuilder.newEmployeeBuilder();
+    return EmployeeBuilder.create();
   }
 
   public static final CompanyBuilder newCompanyBuilder() {
-    return CompanyBuilder.newCompanyBuilder();
+    return CompanyBuilder.create();
   }
 
   public static final DepartmentBuilder newDepartmentBuilder() {
-    return DepartmentBuilder.newDepartmentBuilder();
+    return DepartmentBuilder.create();
   }
 }

@@ -9,6 +9,6 @@ package organization.core.util.builder;
  */
 public class CoreBuilders {
   public static final CassBuilder newCassBuilder() {
-    return CassBuilder.newCassBuilder();
+    return CassBuilder.create();
   }
 }

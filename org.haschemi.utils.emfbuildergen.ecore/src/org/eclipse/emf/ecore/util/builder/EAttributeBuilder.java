@@ -55,7 +55,7 @@ public class EAttributeBuilder implements org.eclipse.emf.ecore.util.builder.IEc
    * This method creates a new instance of the EAttributeBuilder.
    * @return new instance of the EAttributeBuilder
    */
-  public static EAttributeBuilder newEAttributeBuilder() {
+  public static EAttributeBuilder create() {
     return new EAttributeBuilder();
   }
 
@@ -63,7 +63,7 @@ public class EAttributeBuilder implements org.eclipse.emf.ecore.util.builder.IEc
    * This method can be used to override attributes of the builder. It constructs a new builder and copies the current values to it.
    */
   public EAttributeBuilder but() {
-    EAttributeBuilder _builder = newEAttributeBuilder();
+    EAttributeBuilder _builder = create();
     _builder.m_featureChangeableSet = m_featureChangeableSet;
     _builder.m_changeable = m_changeable;
     _builder.m_featureDefaultValueLiteralSet = m_featureDefaultValueLiteralSet;

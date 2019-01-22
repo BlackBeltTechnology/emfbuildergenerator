@@ -63,7 +63,7 @@ public class EReferenceBuilder implements org.eclipse.emf.ecore.util.builder.IEc
    * This method creates a new instance of the EReferenceBuilder.
    * @return new instance of the EReferenceBuilder
    */
-  public static EReferenceBuilder newEReferenceBuilder() {
+  public static EReferenceBuilder create() {
     return new EReferenceBuilder();
   }
 
@@ -71,7 +71,7 @@ public class EReferenceBuilder implements org.eclipse.emf.ecore.util.builder.IEc
    * This method can be used to override attributes of the builder. It constructs a new builder and copies the current values to it.
    */
   public EReferenceBuilder but() {
-    EReferenceBuilder _builder = newEReferenceBuilder();
+    EReferenceBuilder _builder = create();
     _builder.m_featureChangeableSet = m_featureChangeableSet;
     _builder.m_changeable = m_changeable;
     _builder.m_featureContainmentSet = m_featureContainmentSet;

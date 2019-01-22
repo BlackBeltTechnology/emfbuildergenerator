@@ -29,7 +29,7 @@ public class DepartmentBuilder implements organization.util.builder.IOrganizatio
    * This method creates a new instance of the DepartmentBuilder.
    * @return new instance of the DepartmentBuilder
    */
-  public static DepartmentBuilder newDepartmentBuilder() {
+  public static DepartmentBuilder create() {
     return new DepartmentBuilder();
   }
 
@@ -37,7 +37,7 @@ public class DepartmentBuilder implements organization.util.builder.IOrganizatio
    * This method can be used to override attributes of the builder. It constructs a new builder and copies the current values to it.
    */
   public DepartmentBuilder but() {
-    DepartmentBuilder _builder = newDepartmentBuilder();
+    DepartmentBuilder _builder = create();
     _builder.m_featureEmployeesSet = m_featureEmployeesSet;
     _builder.m_employees = m_employees;
     _builder.m_featureEmployeesBuilder = m_featureEmployeesBuilder;

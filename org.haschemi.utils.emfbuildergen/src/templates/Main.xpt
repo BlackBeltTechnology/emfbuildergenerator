@@ -18,7 +18,7 @@
 «EXTENSION org::eclipse::xtend::util::stdlib::io»
 
 «DEFINE main FOR EPackage»
-  «EXPAND ePackage»
+  «EXPAND ePackage FOR this»
 «ENDDEFINE»
 
 «DEFINE ePackage FOR EPackage»

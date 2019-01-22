@@ -41,7 +41,7 @@ public class EParameterBuilder implements org.eclipse.emf.ecore.util.builder.IEc
    * This method creates a new instance of the EParameterBuilder.
    * @return new instance of the EParameterBuilder
    */
-  public static EParameterBuilder newEParameterBuilder() {
+  public static EParameterBuilder create() {
     return new EParameterBuilder();
   }
 
@@ -49,7 +49,7 @@ public class EParameterBuilder implements org.eclipse.emf.ecore.util.builder.IEc
    * This method can be used to override attributes of the builder. It constructs a new builder and copies the current values to it.
    */
   public EParameterBuilder but() {
-    EParameterBuilder _builder = newEParameterBuilder();
+    EParameterBuilder _builder = create();
     _builder.m_featureEAnnotationsSet = m_featureEAnnotationsSet;
     _builder.m_eAnnotations = m_eAnnotations;
     _builder.m_featureEAnnotationsBuilder = m_featureEAnnotationsBuilder;

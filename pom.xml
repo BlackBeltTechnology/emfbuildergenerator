@@ -164,23 +164,25 @@
     </pluginManagement>
   </build>
   <repositories>
+<!--
     <repository>
       <id>metrikforge</id>
       <url>http://metrikforge.informatik.hu-berlin.de/p2-repositories</url>
       <layout>p2</layout>
     </repository>
+-->
    <repository>
       <id>indigo</id>
       <url>http://download.eclipse.org/releases/indigo/</url>
       <layout>p2</layout>
     </repository>
   </repositories>
-    <dependencies>
-      <dependency>
-        <groupId>de.itemis.xtext</groupId>
-        <artifactId>antlr-generator</artifactId>
-        <version>3.0.1</version>
-      </dependency>
+  <dependencies>
+        <dependency>
+            <groupId>org.xtext</groupId>
+            <artifactId>antlr-generator</artifactId>
+            <version>3.2.1</version>
+        </dependency>
     <dependency>
         <groupId>log4j</groupId>
         <artifactId>log4j</artifactId>

@@ -17,6 +17,7 @@ import static org.eclipse.emf.ecore.util.builder.EcoreBuilders.*;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Collections;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
@@ -90,9 +91,9 @@ public class EcoreBuilderTest {
     resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("*", new EcoreResourceFactoryImpl());
     final File companyEcoreFile = new File("Company.ecore");
     try {
-      final Resource resource = resourceSet.createResource(URI.createURI(companyEcoreFile.getAbsolutePath()));
+      final Resource resource = resourceSet.createResource(URI.createFileURI(companyEcoreFile.getAbsolutePath()));
       resource.getContents().add(ePackage);
-      resource.save(null);
+      resource.save(Collections.emptyMap());
 
       if (!resource.getErrors().isEmpty()) {
         final StringBuilder sb = new StringBuilder();
