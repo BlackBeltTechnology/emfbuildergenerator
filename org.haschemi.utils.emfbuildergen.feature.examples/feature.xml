@@ -221,8 +221,6 @@ litigation.
       <import plugin="org.apache.commons.logging"/>
       <import plugin="org.apache.log4j"/>
       <import plugin="org.haschemi.utils.emfbuildergen"/>
-      <import plugin="org.eclipse.uml2.uml" version="3.1.2" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.uml2.uml.resources" version="3.1.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.mwe.utils" version="1.0.0" match="greaterOrEqual"/>
    </requires>
 
@@ -235,13 +233,6 @@ litigation.
 
    <plugin
          id="org.haschemi.utils.emfbuildergen.ecore"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.haschemi.utils.emfbuildergen.uml2"
          download-size="0"
          install-size="0"
          version="0.0.0"

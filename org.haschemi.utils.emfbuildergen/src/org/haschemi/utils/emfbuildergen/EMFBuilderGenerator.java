@@ -75,7 +75,6 @@ public class EMFBuilderGenerator extends WorkflowComponentWithModelSlot {
       standaloneSetup.addUriMap(uriMap);
     }
     standaloneSetup.addRegisterGeneratedEPackage(GenModelPackage.class.getName());
-    standaloneSetup.addRegisterGeneratedEPackage(org.eclipse.uml2.codegen.ecore.genmodel.GenModelPackage.class.getName());
 
     reader = new Reader();
     reader.setUri(m_ecoreURI);

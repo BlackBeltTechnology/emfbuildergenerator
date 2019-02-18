@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.uml2.codegen.ecore.Generator;
 
 public class JavaExtensions {
   private static List<GenModel> s_genModels;
@@ -66,22 +65,11 @@ public class JavaExtensions {
 
   public static String potentiallyPluralizedName(final EStructuralFeature p_structuralFeature) {
     final GenPackage genPackage = findGenPackageFor(p_structuralFeature.getEContainingClass());
-    if (genPackage instanceof org.eclipse.uml2.codegen.ecore.genmodel.GenPackage) {
-      final org.eclipse.uml2.codegen.ecore.genmodel.GenPackage umlGenpackage = (org.eclipse.uml2.codegen.ecore.genmodel.GenPackage) genPackage;
-      final org.eclipse.uml2.codegen.ecore.genmodel.GenModel umlGenModel = (org.eclipse.uml2.codegen.ecore.genmodel.GenModel) umlGenpackage.getGenModel();
-      if (umlGenModel.isPluralizedGetters()) {
-        return pluralize(p_structuralFeature.getName());
-      }
-    }
     return p_structuralFeature.getName();
   }
 
   public static void throwRuntimeException(final String p_message) {
     throw new RuntimeException(p_message);
-  }
-
-  private static String pluralize(final String name) {
-    return Generator.pluralize(name);
   }
 
   private static final GenPackage findGenPackageFor(final EPackage p_package) {
