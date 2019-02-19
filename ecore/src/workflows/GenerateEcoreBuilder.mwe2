@@ -1,0 +1,8 @@
+module EcoreBuilder
+
+Workflow {
+ component = hu.blackbelt.emfbuildergenerator.EMFBuilderGenerator {
+  ecoreURI = "platform:/resource/org.haschemi.utils.emfbuildergen.ecore/model/Ecore.ecore"
+  genModelUri = "platform:/resource/org.haschemi.utils.emfbuildergen.ecore/model/Ecore.genmodel"  
+ }
+}

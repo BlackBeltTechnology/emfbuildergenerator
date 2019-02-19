@@ -1,0 +1,7 @@
+<?xml version="1.0"?> 
+<workflow>
+  <component class="hu.blackbelt.emfbuildergenerator.EMFBuilderGenerator">
+    <ecoreURI value="platform:/resource/emfbuildergenerator-ecore/model/Ecore.ecore"/>
+    <genModelUri value="platform:/resource/emfbuildergenerator-ecore/model/Ecore.genmodel"/>
+  </component>  
+</workflow> 
