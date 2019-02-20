@@ -56,7 +56,7 @@
                             <description>
                                 **Branch:** ${env.WERCKER_GIT_BRANCH}
                                 **P2 Update Site:** https://nexus.blackbelt.cloud/repository/p2-judo/emfbuildergenerator/${project.version}
-                                **Maven repository:** https://nexus.blackbelt.cloud/#browse/browse:maven-judo-release:hu%2Fblackbelt%2Femfbuildergenerator
+                                **Maven repository:** https://nexus.blackbelt.cloud/#browse/browse:maven-judo-release:hu%2Fblackbelt%2Feclipse%2Femfbuildergenerator
                                 **Wercker:** https://app.wercker.com/${project-repositoryId}/runs/build/${env.WERCKER_RUN_ID}
                             </description>
                             <releaseName>${project.version}</releaseName>
@@ -66,13 +66,13 @@
                             <commitish>${env.WERCKER_GIT_COMMIT}</commitish>
                             <fileSets>
                                 <fileSet>
-                                    <directory>${project.parent.basedir}/model/target</directory>
+                                    <directory>${project.parent.basedir}/core/target</directory>
                                     <includes>
                                         <include>*.jar</include>
                                     </includes>
                                 </fileSet>
                                 <fileSet>
-                                    <directory>${project.parent.basedir}/runtime/target</directory>
+                                    <directory>${project.parent.basedir}/ecore/target</directory>
                                     <includes>
                                         <include>*.jar</include>
                                     </includes>
