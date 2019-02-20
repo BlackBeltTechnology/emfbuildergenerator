@@ -7,9 +7,19 @@
 
  $Id$
 -->
+<plugin>
+
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http:///com.example.company.ecore"
-            class="hu.blackbelt.emfbuildergenerator.company.CompanyPackage"
+            class="hu.blackbelt.emfbuildergenerator.company.example.company.CompanyPackage"
             genModel="model/Company.genmodel"/>
    </extension>
+null
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated Company -->
+      <parser
+            type="company"
+            class="hu.blackbelt.emfbuildergenerator.company.example.company.util.CompanyResourceFactoryImpl"/>
+   </extension>
+</plugin>

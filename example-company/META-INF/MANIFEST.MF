@@ -12,6 +12,7 @@ Require-Bundle: org.eclipse.emf.ecore;bundle-version="[2.5.0,3.0.0)";visibility:
  org.eclipse.emf.ecore.xmi;bundle-version="[2.5.0,3.0.0)"
 Bundle-ActivationPolicy: lazy
 Import-Package: hu.blackbelt.emfbuildergenerator;version="[0.0.1,1.0.0)"
-Export-Package: hu.blackbelt.emfbuildergenerator.company,
- hu.blackbelt.emfbuildergenerator.company.impl,
- hu.blackbelt.emfbuildergenerator.company.util
+Export-Package: hu.blackbelt.emfbuildergenerator.company.example.company,
+ hu.blackbelt.emfbuildergenerator.example.company.impl,
+ hu.blackbelt.emfbuildergenerator.example.company.util,
+ hu.blackbelt.emfbuildergenerator.example.company.util.builder

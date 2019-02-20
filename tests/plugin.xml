@@ -17,4 +17,24 @@
             genModel="model/lazyBuilder.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated lazyBuilder -->
+      <package
+            uri="http://www.eaxmple.com/lazyBuilder"
+            class="hu.blackbelt.emfbuildergenerator.tests.lazyBuilder.LazyBuilderPackage"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated issue6 -->
+      <package
+            uri="http:///com.example.company.ecore/organization"
+            class="organization.OrganizationPackage"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated issue6 -->
+      <package
+            uri="http:///com.example.company.ecore/organization/core"
+            class="organization.core.CorePackage"/>
+   </extension>
 </plugin>

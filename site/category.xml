@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/org.haschemi.utils.emfbuildergen.feature_0.0.1.qualifier.jar" id="org.haschemi.utils.emfbuildergen.feature" version="0.0.1.qualifier">
-      <category name="org.haschemi.utils.emfbuildergen"/>
+   <feature id="emfbuildergenerator-feature" version="0.0.1.qualifier">
+      <category name="emfbuildergenerator"/>
    </feature>
-   <feature url="features/org.haschemi.utils.emfbuildergen.feature.examples_0.0.1.qualifier.jar" id="org.haschemi.utils.emfbuildergen.feature.examples" version="0.0.1.qualifier">
-      <category name="org.haschemi.utils.emfbuildergen"/>
+   <feature id="emfbuildergenerator-feature-examples" version="0.0.1.qualifier">
+       <category name="emfbuildergenerator"/>
    </feature>
-   <category-def name="org.haschemi.utils.emfbuildergen" label="EMF Builder Generator"/>
+
+    <category-def name="emfbuildergenerator" label="EMF Builder Generator"/>
 </site>

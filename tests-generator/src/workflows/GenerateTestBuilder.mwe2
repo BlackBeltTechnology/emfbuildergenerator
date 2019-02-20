@@ -1,0 +1,13 @@
+module LazyBuilder
+
+Workflow {
+ component = hu.blackbelt.emfbuildergenerator.EMFBuilderGenerator {
+  ecoreURI = "platform:/resource/emfbuildergenerator-tests/model/lazyBuilder.ecore"
+  genModelUri = "platform:/resource/emfbuildergenerator-tests/model/lazyBuilder.genmodel"       
+ }
+
+ component = hu.blackbelt.emfbuildergenerator.EMFBuilderGenerator {
+  ecoreURI = "platform:/resource/emfbuildergenerator-tests/model/issue6.ecore"
+  genModelUri = "platform:/resource/emfbuildergenerator-tests/model/issue6.genmodel"       
+ }
+}
