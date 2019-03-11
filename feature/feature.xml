@@ -230,6 +230,9 @@ litigation.
       <import plugin="org.eclipse.emf.mwe2.launch" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.mwe2.runtime" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.mwe.core" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jface" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.ide" version="3.5.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
@@ -245,5 +248,13 @@ litigation.
         install-size="0"
         version="0.0.0"
         unpack="false"/>
+
+    <plugin
+        id="emfbuildergenerator-ui"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/>
+
 
 </feature>

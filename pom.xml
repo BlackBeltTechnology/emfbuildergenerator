@@ -42,6 +42,7 @@
     <modules>
         <module>core</module>
         <module>ecore</module>
+        <module>ui</module>
         <module>example-company-generator</module>
         <module>example-company</module>
         <module>feature</module>
