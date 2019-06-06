@@ -35,6 +35,7 @@ public class EMFBuilderGenerator extends WorkflowComponentWithModelSlot {
   private String m_formatterConfigFile = "formatter.xml";
   private String m_platformUri = "..";
   private String m_featureModifierMethodPrefix = "with";
+  private String m_outputPath = "";
 
   private Reader reader;
   private Generator generator;
@@ -118,7 +119,11 @@ public class EMFBuilderGenerator extends WorkflowComponentWithModelSlot {
         final JavaBeautifier javaBeautifier = new JavaBeautifier();
         javaBeautifier.setConfigFile(m_formatterConfigFile);
         outlet.addPostprocessor(javaBeautifier);
-        outlet.setPath(m_platformUri + genModel.getModelDirectory());
+        if (isEmpty(m_outputPath)) {
+        	outlet.setPath(m_platformUri + genModel.getModelDirectory());
+        } else {
+        	outlet.setPath(m_outputPath);        	
+        }
         generator.addOutlet(outlet);
 
         GlobalVarDef optionFeatureAccesMethodPrefix = new GlobalVarDef();
@@ -171,6 +176,12 @@ public class EMFBuilderGenerator extends WorkflowComponentWithModelSlot {
   public void setPlatformUri(final String p_platformUri) {
     if (!isEmpty(p_platformUri)) {
       m_platformUri = p_platformUri;
+    }
+  }
+
+  public void setOutputPath(final String p_outputPath) {
+    if (!isEmpty(p_outputPath)) {
+      m_outputPath = p_outputPath;
     }
   }
 
