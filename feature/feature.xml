@@ -2,7 +2,7 @@
 <feature
       id="emfbuildergenerator-feature"
       label="EMF Builder Generator (Core)"
-      version="0.0.1.qualifier"
+      version="1.0.0.qualifier"
       provider-name="BlackBelt Technology">
 
    <description url="https://github.com/BlackBeltTechnology/emfbuildergenerator">

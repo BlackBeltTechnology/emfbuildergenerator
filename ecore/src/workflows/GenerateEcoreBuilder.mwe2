@@ -1,8 +1,19 @@
 module EcoreBuilder
 
+import org.eclipse.emf.mwe.utils.*
+
+var rootPath = "."
+
 Workflow {
- component = hu.blackbelt.emfbuildergenerator.EMFBuilderGenerator {
-  ecoreURI = "platform:/resource/emfbuildergenerator-ecore/model/Ecore.ecore"
-  genModelUri = "platform:/resource/emfbuildergenerator-ecore/model/Ecore.genmodel"  
- }
+
+    bean = org.eclipse.emf.mwe.utils.StandaloneSetup {
+	   platformUri = "${rootPath}"
+    }
+
+ 	component = hu.blackbelt.emfbuildergenerator.EMFBuilderGenerator {
+ 	    platformUri = "${rootPath}"
+  		outputPath = "${rootPath}/src-gen"	
+  		ecoreURI = "platform:/resource/emfbuildergenerator-ecore/model/Ecore.ecore"
+  		genModelUri = "platform:/resource/emfbuildergenerator-ecore/model/Ecore.genmodel"  
+ 	}
 }

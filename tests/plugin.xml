@@ -21,20 +21,23 @@
       <!-- @generated lazyBuilder -->
       <package
             uri="http://www.eaxmple.com/lazyBuilder"
-            class="hu.blackbelt.emfbuildergenerator.tests.lazyBuilder.LazyBuilderPackage"/>
+            class="hu.blackbelt.emfbuildergenerator.tests.lazyBuilder.LazyBuilderPackage"
+            genModel="model/lazyBuilder.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated issue6 -->
       <package
             uri="http:///com.example.company.ecore/organization"
-            class="organization.OrganizationPackage"/>
+            class="organization.OrganizationPackage"
+            genModel="model/issue6.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated issue6 -->
       <package
             uri="http:///com.example.company.ecore/organization/core"
-            class="organization.core.CorePackage"/>
+            class="organization.core.CorePackage"
+            genModel="model/issue6.genmodel"/>
    </extension>
 </plugin>

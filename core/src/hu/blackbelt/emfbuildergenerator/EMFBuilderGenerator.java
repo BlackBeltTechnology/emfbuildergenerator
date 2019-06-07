@@ -14,16 +14,12 @@ import org.eclipse.emf.mwe.core.monitor.ProgressMonitor;
 import org.eclipse.emf.mwe.utils.Mapping;
 import org.eclipse.emf.mwe.utils.Reader;
 import org.eclipse.emf.mwe.utils.StandaloneSetup;
-import org.eclipse.internal.xtend.expression.ast.SyntaxElement;
 import org.eclipse.xpand2.Generator;
-import org.eclipse.xpand2.XpandExecutionContext;
 import org.eclipse.xpand2.output.JavaBeautifier;
 import org.eclipse.xpand2.output.Outlet;
-import org.eclipse.xpand2.output.Output;
 import org.eclipse.xtend.expression.AbstractExpressionsUsingWorkflowComponent.GlobalVarDef;
 import org.eclipse.xtend.typesystem.emf.EmfMetaModel;
 import org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel;
-
 import templates.JavaExtensions;
 
 public class EMFBuilderGenerator extends WorkflowComponentWithModelSlot {

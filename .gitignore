@@ -11,6 +11,7 @@
 /**/*.pyc
 /**/*~
 /**/gen/
+/**/src-gen/
 # model
 **/.runtime
 **/data/localmodel

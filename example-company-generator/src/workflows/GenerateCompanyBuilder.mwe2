@@ -1,8 +1,0 @@
-module EcoreBuilder
-
-Workflow {
- component = hu.blackbelt.emfbuildergenerator.EMFBuilderGenerator {
-  ecoreURI = "platform:/resource/emfbuildergenerator-example-company/model/Company.ecore"
-  genModelUri = "platform:/resource/emfbuildergenerator-example-company/model/Company.genmodel"       
- }
-}

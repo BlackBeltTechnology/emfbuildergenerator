@@ -1,7 +1,7 @@
 <feature
     id="emfbuildergenerator-feature-examples"
     label="EMF Builder Generator Examples"
-    version="0.0.1.qualifier"
+    version="1.0.0.qualifier"
     provider-name="BlackBelt Technology">
     
     <description url="https://github.com/BlackBeltTechnology/emfbuildergenerator">

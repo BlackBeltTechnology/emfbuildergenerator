@@ -1,0 +1,31 @@
+module EcoreBuilder
+
+
+import org.eclipse.emf.mwe.utils.*
+
+var rootPath = "."
+
+Workflow {
+
+    bean = org.eclipse.emf.mwe.utils.StandaloneSetup {
+	   platformUri = "${rootPath}"
+    }
+
+    component = org.eclipse.emf.mwe.utils.DirectoryCleaner {
+        directory = "src-gen"
+    }
+     
+    component = org.eclipse.emf.mwe2.ecore.EcoreGenerator {
+        generateCustomClasses = false
+        genModel = "platform:/resource/emfbuildergenerator-example-company/model/Company.genmodel"
+        srcPath = "platform:/resource/emfbuildergenerator-example-company/src-gen"   
+    }
+
+ 	component = hu.blackbelt.emfbuildergenerator.EMFBuilderGenerator {
+ 	    platformUri = "${rootPath}"
+  		outputPath = "${rootPath}/src-gen"	
+		ecoreURI = "platform:/resource/emfbuildergenerator-example-company/model/Company.ecore"
+        genModelUri = "platform:/resource/emfbuildergenerator-example-company/model/Company.genmodel"       
+ 	}
+}
+

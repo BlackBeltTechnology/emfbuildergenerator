@@ -6,20 +6,55 @@
 	<parent>
         <groupId>hu.blackbelt.eclipse</groupId>
         <artifactId>emfbuildergenerator</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>emfbuildergenerator-ecore</artifactId>
 	<packaging>eclipse-plugin</packaging>
 
+	<dependencies>
+        <dependency>
+            <groupId>org.eclipse.emf</groupId>
+            <artifactId>org.eclipse.emf.common</artifactId>
+            <version>${emf-common-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.emf</groupId>
+            <artifactId>org.eclipse.emf.ecore</artifactId>
+            <version>${emf-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.emf</groupId>
+            <artifactId>org.eclipse.emf.ecore.xmi</artifactId>
+            <version>${emf-version}</version>
+        </dependency>
+	</dependencies>
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.fornax.toolsupport</groupId>
-				<artifactId>fornax-oaw-m2-plugin</artifactId>
-				<configuration>
-					<workflowDescriptor>src/workflows/GenerateEcoreBuilder.mwe2</workflowDescriptor>
-				</configuration>
-			</plugin>
+            <!-- Generates the Ecore model via MWE2 -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>mwe2Launcher</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+		                <configuration>
+		                    <mainClass>org.eclipse.emf.mwe2.launch.runtime.Mwe2Launcher</mainClass>
+		                    <arguments>
+		                        <argument>${project.basedir}/src/workflows/GenerateEcoreBuilder.mwe2</argument>
+		                        <argument>-p</argument>
+		                        <argument>rootPath=${project.basedir}</argument>
+		                    </arguments>
+		                    <classpathScope>compile</classpathScope>
+		                    <includePluginDependencies>true</includePluginDependencies>
+		                    <cleanupDaemonThreads>false</cleanupDaemonThreads><!-- see https://bugs.eclipse.org/bugs/show_bug.cgi?id=475098#c3 -->
+		                </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 		</plugins>
 	</build>
 </project>
